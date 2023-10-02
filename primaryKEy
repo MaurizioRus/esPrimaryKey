@@ -1,0 +1,50 @@
+
+CREATE TABLE customers(
+    customer_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    );
+
+INSERT INTO customers ()
+    VALUES
+        ('maurizio', 'covelli'),
+        ('matteo' , 'rossi'),
+        ('edoardo' , 'ricca');
+
+
+UPDATE customers
+SET first_name = 'giuseppe'
+WHERE customer_id = 1;
+
+DELETE FROM customers
+WHERE customer_id = 3;
+
+TRUNCATE TABLE customers;
+
+______________________________________________________________________
+7)
+CREATE TABLE Products (
+ product_id NOT NULL AUTO_INCREMENT,
+ product_name VARCHAR(255) NOT NULL,
+ product_description VARCHAR(255) NOT NULL,
+ product_price DECIMAL(10, 2) NOT NULL,
+ product_quantity INT NOT NULL,
+ PRIMARY KEY (product_id)
+);
+
+8)
+
+CREATE TABLE Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ customer_id INT NOT NULL,
+ expected_arrival_time DATE,
+ PRIMARY KEY (order_id)
+);
+
+9)
+CREATE TABLE Product_Orders (
+ order_id INT NOT NULL AUTO_INCREMENT,
+ product_name VARCHAR(255) NOT NULL,
+ total_revenue DOUBLE,
+ PRIMARY KEY (order_id , product_name)
+);
